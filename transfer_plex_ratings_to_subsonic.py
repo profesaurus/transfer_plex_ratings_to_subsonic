@@ -56,7 +56,7 @@ def copy_ratings():
             if not path in musicDict:
                 continue
 
-            newRating = plexRatingToSubsonicRating[track.userRating]
+            newRating = plexRatingToSubsonicRating[int(track.userRating)]
             print("Plex rating " + str(int(track.userRating)) + " to Subsonic rating " + str(newRating) + " for track: " + track.title)
             subsonic.setRating(musicDict[path], newRating)
 
